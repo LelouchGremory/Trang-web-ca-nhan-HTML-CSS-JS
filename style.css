@@ -1,0 +1,210 @@
+/* Cho hiệu ứng bong bóng nền */
+.bubbles-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #d3cce3 0%, #e9e4f0 100%);
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  animation: bubble-up 15s linear infinite;
+}
+
+@keyframes bubble-up {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  color:#0f172a;
+}
+
+/* Landing */
+#landing{
+  height:100vh;display:flex;align-items:center;justify-content:center;
+  background:url("IMG_4744.JPG") center/cover no-repeat;position:relative;overflow:hidden;
+}
+#landing::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.38);}
+.landing-content{position:relative;z-index:2;text-align:center;color:#fff;padding:20px}
+.landing-content h1{font-size:2.1rem;margin-bottom:8px;text-shadow:0 6px 18px rgba(0,0,0,0.35)}
+.landing-content p{opacity:0.95;margin-bottom:18px}
+#viewMoreBtn{
+  padding:10px 22px;border-radius:10px;border:0;background:#fff;color:#123f7a;font-weight:700;cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,0.18);transition:transform .25s,background .2s
+}
+#viewMoreBtn:hover{transform:translateY(-3px);background:#e6f0ff}
+
+.hidden{display:none !important}
+.fade-out{opacity:0;transform:translateY(-10px);transition:opacity .6s ease,transform .6s ease}
+
+/* Main */
+main{
+  padding:34px 20px;
+  animation:fadeIn .6s ease;
+  background: transparent;
+  position: relative;
+  z-index: 0;
+}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.intro-section{text-align:center;margin-bottom:24px}
+.intro-section h1{font-size:1.8rem;margin-bottom:8px;color:#0f172a}
+.intro-section p{font-size:1rem;color:#1e293b}
+
+/* Exchange */
+.exchange-section{
+  width:340px;margin:0 auto;
+  background:#fff;
+  padding:20px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.08);text-align:center;
+  position: relative;
+  z-index: 1;
+}
+.converter{display:flex;justify-content:space-between;margin-top:12px}
+.input-group{display:flex;flex-direction:column;align-items:flex-start}
+.input-group input{padding:8px;border-radius:8px;border:1px solid #e2e8f0;width:140px}
+#refreshBtn{margin-top:12px;padding:8px 14px;border-radius:8px;border:0;background:#0f172a;color:#fff;cursor:pointer}
+#refreshBtn:hover{opacity:0.95}
+
+/* Weather */
+.weather-section{
+  margin-top:30px;
+  padding:10px 6px;
+  text-align:center;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+.weather-container{
+  display:flex;flex-direction:row;gap:16px;justify-content:center;align-items:stretch;
+  overflow-x:auto;padding:10px 6px;
+}
+.weather-card{
+  min-width:170px;max-width:170px;background:linear-gradient(180deg,#dbeafe,#93c5fd);
+  border-radius:16px;padding:12px;box-shadow:0 8px 18px rgba(2,6,23,0.08);
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;
+  position: relative;
+  z-index: 1;
+  /* HIỆU ỨNG MƯỢT MÀ HƠN */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* HIỆU ỨNG KHI DI CHUỘT QUA */
+.weather-card:hover {
+  transform: translateY(-5px); /* Nhấc thẻ lên một chút */
+  box-shadow: 0 12px 24px rgba(2,6,23,0.12); /* Tăng độ đậm của bóng đổ */
+}
+
+.weather-card img{width:100%;height:110px;object-fit:contain}
+.weather-card h3{margin-top:8px;font-size:14px;color:#07203a}
+.weather-card p{margin-top:6px;font-size:13px;color:#07345a}
+
+@media (max-width:640px){
+  .weather-card{min-width:150px;max-width:150px}
+  #landing h1{font-size:1.6rem}
+}
+
+
+.contact-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0f172a; /* Màu nền tối */
+  color: #fff; /* Màu chữ trắng */
+  padding: 10px 15px;
+  border-radius: 50px; /* Bo tròn */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Khoảng cách giữa icon và chữ */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 14px;
+  font-weight: 600;
+}
+.contact-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.contact-fab svg {
+  display: block;
+}
+
+.contact-popup {
+  position: fixed;
+  bottom: 80px; /* Vị trí ngay trên nút FAB */
+  right: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+  /* Ẩn ban đầu */
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+}
+.contact-popup.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+.contact-popup #emailText {
+  font-size: 14px;
+  color: #334155;
+  user-select: all; /* Cho phép bôi đen email */
+}
+.contact-popup button {
+  background-color: #f1f5f9;
+  border: none;
+  border-radius: 6px;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-popup button:hover {
+  background-color: #e2e8f0;
+}
+.contact-popup button .copy-icon {
+  display: block;
+}
+.contact-popup button .copied-text {
+  display: none;
+  font-size: 13px;
+  color: #16a34a; /* Màu xanh lá */
+  font-weight: 600;
+  padding: 0 2px;
+}
+.contact-popup button.copied .copy-icon {
+  display: none;
+}
+.contact-popup button.copied .copied-text {
+  display: block;
+}

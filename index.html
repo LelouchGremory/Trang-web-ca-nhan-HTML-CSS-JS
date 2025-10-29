@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hola! Đây là trang web của Khang Nhi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bubbles-background"></div>
+
+  <section id="landing">
+    <div class="landing-content">
+      <h1>Hola! Đây là trang web của Khang Nhi</h1>
+      <p>Mình đến từ lớp chuyên ngành Vật lý Tin học, đây là bài tập về nhà của mình</p>
+      <button id="viewMoreBtn">XEM THÊM</button>
+    </div>
+  </section>
+
+  <main id="mainContent" class="hidden" aria-hidden="true">
+    <section class="intro-section">
+      <h1>Hola! Đây là trang web của Khang Nhi</h1>
+      <p>Mình đến từ lớp chuyên ngành Vật lý Tin học, đây là bài tập về nhà của mình</p>
+    </section>
+
+    <section class="exchange-section">
+      <h2>Tỷ giá USD/VND</h2>
+      <p id="rate">Đang tải...</p>
+      <div class="converter">
+        <div class="input-group">
+          <label for="usdInput">USD:</label>
+          <input id="usdInput" type="number" placeholder="Nhập USD" />
+        </div>
+        <div class="input-group">
+          <label for="vndOutput">VND:</label>
+          <input id="vndOutput" type="text" readonly />
+        </div>
+      </div>
+      <button id="refreshBtn">Làm mới</button>
+    </section>
+
+    <section class="weather-section">
+      <h2>Dự báo thời tiết 7 ngày tại Thành phố Hồ Chí Minh</h2>
+      <div id="weatherContainer" class="weather-container"></div>
+    </section>
+  </main>
+
+  <div class="contact-fab" id="contactBtn" title="Liên hệ">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+      <path d="M1.5 4.5h21a.5.5 0 0 1 .5.5v14a.5.5 0 0 1-.5.5h-21a.5.5 0 0 1-.5-.5v-14a.5.5 0 0 1 .5-.5Zm1.69 2.003L12 12.012l8.81-5.509-17.62 .001ZM3 7.412v11.088h18V7.412L12.247 13.9a.5.5 0 0 1-.494 0L3 7.412Z"/>
+    </svg>
+    <span>LIÊN HỆ</span>
+  </div>
+
+  <div class="contact-popup" id="contactPopup">
+    <span id="emailText">21130224@student.hcmus.edu.vn</span>
+    <button id="copyEmailBtn" title="Copy email">
+      <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+        <path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.552 22 15.9991 22H4.00066C3.4479 22 3.00066 21.5523 3.00066 20.9991V8C3.00066 7.44772 3.44837 7 4.00066 7H6.9998V6ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6ZM5.00066 9V20H14.9998V9H5.00066Z"/>
+      </svg>
+      <span class="copied-text">Đã sao chép!</span>
+    </button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
